@@ -45,7 +45,9 @@
         </v-list-tile>
       </v-list>
     </v-navigation-drawer>
-    <v-content></v-content>
+    <v-content>
+        <Dashboard/>
+    </v-content>
     <v-footer app :fixed="footer.fixed" :clipped-right="footer.clippedRight">
       <span class="caption mx-3">&copy; 2018, MIT LICENSE - Free to use and learn from</span>
     </v-footer>
@@ -54,12 +56,12 @@
 </template>
 
 <script>
-import HelloWorld from "./components/HelloWorld";
+import Dashboard from "./components/Dashboard";
 
 export default {
   name: "App",
   components: {
-    HelloWorld
+    Dashboard
   },
   data: () => ({
     drawer: {
