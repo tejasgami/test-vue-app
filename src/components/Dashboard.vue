@@ -3,12 +3,18 @@
     <!-- <v-container fluid grid-list-xl> -->
     <v-layout wrap align-center>
       <v-flex xs12 sm6 d-flex pl-3 pt-3>
-        <v-select v-model="selectedItem" :items="items" box @input="changeSetting" label="Select settings"></v-select>
+        <v-select
+          v-model="selectedItem"
+          :items="items"
+          box
+          @input="changeSetting"
+          label="Select settings"
+        ></v-select>
       </v-flex>
     </v-layout>
     <!-- </v-container> -->
     <v-container fluid fill-height style="display:table">
-      <Box :cards="filterDataSetting"/>
+      <Box :cards="cards"/>
     </v-container>
   </div>
 </template>
@@ -21,7 +27,7 @@ export default {
   },
   data() {
     return {
-      selectedItem:"no-return-box",
+      selectedItem: "no-return-box",
       items: ["no-return-box", "no-active-box", "returnable-box"],
       filterData: [
         {
@@ -58,7 +64,7 @@ export default {
           hasShippedBox: true,
           hasReturnableBox: true,
           hasFeedbackWaiting: false,
-          lastBoxStarted: "2019-05-13T12:15:25.444Z"
+          lastBoxStarted: "2019-05-13T12:15:25.445Z"
         }
       ],
       cards: [
@@ -105,7 +111,8 @@ export default {
           keep: false
         }
       ],
-      selectedFilterData: [{
+      selectedFilterData: [
+        {
           hasPassword: true,
           hasAddress: true,
           hasSize: true,
@@ -116,13 +123,11 @@ export default {
           hasReturnableBox: false,
           hasFeedbackWaiting: false,
           lastBoxStarted: "2019-05-13T12:15:25.444Z"
-        }],
-    };
-  },
-  methods: {
-    async changeSetting(value) {
-      this.selectedFilterData = [{
-          id: 2,
+        }
+      ],
+      copy_cards: [
+        {
+          id: 1,
           image: "https://cdn.vuetifyjs.com/images/parallax/material.jpg",
           address1: "1",
           address2: "2699 kd",
@@ -134,22 +139,53 @@ export default {
           size: false,
           comment: false,
           keep: true
-        }]
-      // this.selectedFilterData = this.filterData[this.items.indexOf(value)]
-      // console.log("this.selectedFilterData]====",this.selectedFilterData[0].lastBoxStarted);
+        },
+        {
+          id: 2,
+          image: "https://cdn.vuetifyjs.com/images/parallax/material.jpg",
+          address1: "1",
+          address2: "2699 kd",
+          address3: "56454",
+          name: "Bugatti - Boty",
+          style: true,
+          fit: false,
+          price: true,
+          size: true,
+          comment: false,
+          keep: true
+        },
+        {
+          id: 3,
+          image: "https://cdn.vuetifyjs.com/images/parallax/material.jpg",
+          address1: "1",
+          address2: "2699 kd",
+          address3: "56454",
+          name: "Bugatti - Boty",
+          style: false,
+          fit: true,
+          price: true,
+          size: true,
+          comment: false,
+          keep: false
+        }
+      ]
+    };
+  },
+  methods: {
+    changeSetting: function(value) {
+      this.selectedFilterData = this.filterData[this.items.indexOf(value)];
+      this.cards = this.copy_cards.filter(
+        c => c.size == this.selectedFilterData.hasSizes
+      );
     }
-   
   },
   computed: {
-  
-     filterDataSetting: function() {
-       alert("SAdfas");
-     let data = this.cards.filter(async function(c) {
-        //  console.log("this.selectedFilterData[0]===",this.selectedFilterData[0]);
-          return await c.size === this.selectedFilterData[0].hasSize
-     }.bind(this));
-console.log("DAta----",data);
-      return data;
+    filterDataSetting: function() {
+      this.copy_cards = this.cards;
+      this.selectedFilterData = this.filterData[this.items.indexOf(value)];
+      this.cards = this.copy_cards.filter(
+        c => c.size == this.selectedFilterData.hasSizes
+      );
     }
   }
 };
