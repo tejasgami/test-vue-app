@@ -17,10 +17,9 @@
           <v-flex xs12 sm3>
             <v-card>
               <v-img
-                :aspect-ratio="16/9"
+                :aspect-ratio="16/12"
                 src="https://cdn.vuetifyjs.com/images/parallax/material.jpg"
               ></v-img>
-              <h4>image</h4>
             </v-card>
           </v-flex>
           <v-flex xs12 sm9>
