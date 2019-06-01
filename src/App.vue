@@ -1,57 +1,57 @@
 <template>
   <div id="app">
-    <!-- <v-app> -->
-    <v-toolbar
-      app
-      :absolute="toolbar.absolute"
-      :fixed="toolbar.fixed"
-      :clipped-right="toolbar.clippedRight"
-    >
-      <v-toolbar-title>Vuetify Drawer Example</v-toolbar-title>
-      <v-spacer></v-spacer>
-      <v-toolbar-items class>
-        <v-toolbar-side-icon @click.stop="toggleDrawer"></v-toolbar-side-icon>
-      </v-toolbar-items>
-    </v-toolbar>
+    <v-app>
+      <v-toolbar
+        app
+        :absolute="toolbar.absolute"
+        :fixed="toolbar.fixed"
+        :clipped-right="toolbar.clippedRight"
+      >
+        <v-toolbar-title>Test</v-toolbar-title>
+        <v-spacer></v-spacer>
+        <v-toolbar-items class>
+          <v-toolbar-side-icon @click.stop="toggleDrawer"></v-toolbar-side-icon>
+        </v-toolbar-items>
+      </v-toolbar>
 
-    <v-navigation-drawer
-      :clipped="drawer.clipped"
-      :fixed="drawer.fixed"
-      :absolute="drawer.absolute"
-      :permanent="drawer.permanent"
-      :mini-variant="drawer.mini"
-      v-model="drawer.open"
-      app
-      right
-    >
-      <v-list>
-        <v-list-tile @click="toggleMiniDrawer">
-          <v-list-tile-action>
-            <v-icon>aspect_ratio</v-icon>
-          </v-list-tile-action>
-          <v-list-tile-content>
-            <v-list-tile-title>Mini Drawer</v-list-tile-title>
-          </v-list-tile-content>
-        </v-list-tile>
+      <v-navigation-drawer
+        :clipped="drawer.clipped"
+        :fixed="drawer.fixed"
+        :absolute="drawer.absolute"
+        :permanent="drawer.permanent"
+        :mini-variant="drawer.mini"
+        v-model="drawer.open"
+        app
+        right
+      >
+        <v-list>
+          <v-list-tile @click="toggleMiniDrawer">
+            <v-list-tile-action>
+              <v-icon>aspect_ratio</v-icon>
+            </v-list-tile-action>
+            <v-list-tile-content>
+              <v-list-tile-title>Menu 1</v-list-tile-title>
+            </v-list-tile-content>
+          </v-list-tile>
 
-        <v-divider></v-divider>
-        <v-list-tile @click="toggleMiniDrawer">
-          <v-list-tile-action>
-            <v-icon>aspect_ratio</v-icon>
-          </v-list-tile-action>
-          <v-list-tile-content>
-            <v-list-tile-title>Mini Drawer</v-list-tile-title>
-          </v-list-tile-content>
-        </v-list-tile>
-      </v-list>
-    </v-navigation-drawer>
-    <v-content>
+          <v-divider></v-divider>
+          <v-list-tile @click="toggleMiniDrawer">
+            <v-list-tile-action>
+              <v-icon>aspect_ratio</v-icon>
+            </v-list-tile-action>
+            <v-list-tile-content>
+              <v-list-tile-title>Menu 2</v-list-tile-title>
+            </v-list-tile-content>
+          </v-list-tile>
+        </v-list>
+      </v-navigation-drawer>
+      <v-content>
         <Dashboard/>
-    </v-content>
-    <v-footer app :fixed="footer.fixed" :clipped-right="footer.clippedRight">
-      <span class="caption mx-3">&copy; 2018, MIT LICENSE - Free to use and learn from</span>
-    </v-footer>
-    <!-- </v-app> -->
+      </v-content>
+      <v-footer app :fixed="footer.fixed" :clipped-right="footer.clippedRight">
+        <span class="caption mx-3">&copy; 2019 test</span>
+      </v-footer>
+    </v-app>
   </div>
 </template>
 
