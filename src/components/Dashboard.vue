@@ -18,8 +18,8 @@
             <v-card>
               <v-img
                 :aspect-ratio="16/12"
-                src="https://cdn.vuetifyjs.com/images/parallax/material.jpg"
-              ></v-img>
+                :src=card.image>
+              </v-img>
             </v-card>
           </v-flex>
           <v-flex xs12 sm9>

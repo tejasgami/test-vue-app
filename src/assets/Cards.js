@@ -1,7 +1,7 @@
 const Cards = [
     {
       id: 1,
-      image: "https://cdn.vuetifyjs.com/images/parallax/material.jpg",
+      image: "https://via.placeholder.com/150",
       address1: "1",
       address2: "2699 kd",
       address3: "56454",
@@ -16,7 +16,7 @@ const Cards = [
     },
     {
       id: 2,
-      image: "https://cdn.vuetifyjs.com/images/parallax/material.jpg",
+      image: "https://via.placeholder.com/120",
       address1: "1",
       address2: "123 XS",
       address3: "56454",
@@ -31,7 +31,7 @@ const Cards = [
     },
     {
       id: 3,
-      image: "https://cdn.vuetifyjs.com/images/parallax/material.jpg",
+      image: "https://via.placeholder.com/200",
       address1: "1",
       address2: "4568 Times",
       address3: "56454",
